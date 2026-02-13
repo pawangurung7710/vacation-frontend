@@ -5,10 +5,18 @@ import ListingHero from "@/components/ListingHero";
 import TrekGrid from "@/components/TrekGrid";
 import TrekFilters from "@/components/TrekFilters";
 import MobileFilterDrawer from "@/components/MobileFilterDrawer";
-import { treks } from "@/data/treks";
+import ListingSEO from "@/components/ListingSEO";
+import { treks, Region, Difficulty } from "@/data/treks";
 import { SlidersHorizontal } from "lucide-react";
 
-const initialFilters = {
+interface Filters {
+    regions: Region[];
+    difficulties: Difficulty[];
+    duration: string;
+    priceMax: number;
+}
+
+const initialFilters: Filters = {
     regions: [],
     difficulties: [],
     duration: "all",
@@ -145,6 +153,8 @@ export default function TreksListingPage() {
                         )}
                     </div>
                 </div>
+
+                <ListingSEO />
             </div>
         </main>
     );
