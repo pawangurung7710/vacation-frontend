@@ -13,17 +13,17 @@ This plan outlines the steps to build the premium Homepage for Vacation Nepal Tr
 - [x] **Task: Implementation of Sticky Top Navigation** [bab924b]
   - Build the nav with logo, menu links, and WhatsApp contact button.
   - Implement stickiness and mobile menu toggle.
-- [x] **Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)** [7d7ea78]
 
 ---
 
 ## Phase 2: Hero & Immediate Trust
 *Focus: High-impact entry point.*
 
-- [ ] **Task: Immersive Hero Section**
+- [x] **Task: Immersive Hero Section**
   - Implement full-width immersive image with overlay.
   - Build the centered search UI (Region & Month dropdowns).
-- [ ] **Task: Trust Strip**
+- [x] **Task: Trust Strip**
   - Build the 4-item horizontal trust bar (Ratings, Guides, Group Size, Eco-friendly).
 - [ ] **Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)**
 
