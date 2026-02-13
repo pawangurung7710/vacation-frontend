@@ -2,12 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Clock, Mountain, Award, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const treks = [
     {
         title: "Everest Base Camp Trek",
+        slug: "everest-base-camp",
         image: "/images/everest-base-camp.jpg",
         duration: "14 Days",
         difficulty: "Strenuous",
@@ -17,6 +19,7 @@ const treks = [
     },
     {
         title: "Annapurna Circuit Trek",
+        slug: "annapurna-circuit",
         image: "/images/annapurna-circuit.jpg",
         duration: "12 Days",
         difficulty: "Moderate",
@@ -26,6 +29,7 @@ const treks = [
     },
     {
         title: "Manaslu Circuit Trek",
+        slug: "manaslu-circuit",
         image: "/images/manaslu-circuit.jpg",
         duration: "15 Days",
         difficulty: "Challenging",
@@ -43,54 +47,56 @@ const TrekCard = ({ trek, index }: { trek: typeof treks[0]; index: number }) => 
         transition={{ delay: index * 0.1 }}
         className="premium-card group overflow-hidden"
     >
-        {/* Image Container */}
-        <div className="relative aspect-[16/9] overflow-hidden">
-            <Image
-                src={trek.image}
-                alt={trek.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                {trek.badges.map((badge) => (
-                    <span key={badge} className="bg-white/90 backdrop-blur-sm text-primary-text text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
-                        {badge}
+        <Link href={`/treks/${trek.slug}`}>
+            {/* Image Container */}
+            <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                    src={trek.image}
+                    alt={trek.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                    {trek.badges.map((badge) => (
+                        <span key={badge} className="bg-white/90 backdrop-blur-sm text-primary-text text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
+                            {badge}
+                        </span>
+                    ))}
+                </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold leading-tight group-hover:text-cta-accent transition-colors">
+                        {trek.title}
+                    </h3>
+                    <span className="text-earth-accent font-bold text-lg">
+                        ${trek.price}
                     </span>
-                ))}
-            </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-6">
-            <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold leading-tight group-hover:text-cta-accent transition-colors">
-                    {trek.title}
-                </h3>
-                <span className="text-earth-accent font-bold text-lg">
-                    ${trek.price}
-                </span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center text-sm text-primary-text/70">
-                    <Clock size={16} className="text-cta-accent mr-2" />
-                    <span>{trek.duration}</span>
                 </div>
-                <div className="flex items-center text-sm text-primary-text/70">
-                    <Award size={16} className="text-cta-accent mr-2" />
-                    <span>{trek.difficulty}</span>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center text-sm text-primary-text/70">
+                        <Clock size={16} className="text-cta-accent mr-2" />
+                        <span>{trek.duration}</span>
+                    </div>
+                    <div className="flex items-center text-sm text-primary-text/70">
+                        <Award size={16} className="text-cta-accent mr-2" />
+                        <span>{trek.difficulty}</span>
+                    </div>
+                    <div className="flex items-center text-sm text-primary-text/70">
+                        <Mountain size={16} className="text-cta-accent mr-2" />
+                        <span>{trek.altitude} max</span>
+                    </div>
                 </div>
-                <div className="flex items-center text-sm text-primary-text/70">
-                    <Mountain size={16} className="text-cta-accent mr-2" />
-                    <span>{trek.altitude} max</span>
+
+                <div className="w-full flex items-center justify-center space-x-2 py-3 border border-cta-accent text-cta-accent rounded-xl font-bold group-hover:bg-cta-accent group-hover:text-white transition-all group-hover:shadow-md">
+                    <span>View Details</span>
+                    <ArrowUpRight size={18} />
                 </div>
             </div>
-
-            <button className="w-full flex items-center justify-center space-x-2 py-3 border border-cta-accent text-cta-accent rounded-xl font-bold hover:bg-cta-accent hover:text-white transition-all group-hover:shadow-md">
-                <span>View Details</span>
-                <ArrowUpRight size={18} />
-            </button>
-        </div>
+        </Link>
     </motion.div>
 );
 
@@ -103,12 +109,12 @@ export default function FeaturedTreks() {
                         <span className="text-cta-accent font-bold tracking-widest uppercase text-sm mb-2 block">Our Top Destinations</span>
                         <h2 className="text-3xl md:text-5xl font-bold">Popular Himalayan Treks</h2>
                     </div>
-                    <button className="btn-primary flex items-center space-x-2 group">
+                    <Link href="/treks" className="btn-primary flex items-center space-x-2 group">
                         <span>Explore All Treks</span>
                         <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                             →
                         </motion.span>
-                    </button>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
