@@ -10,10 +10,10 @@ This plan outlines the steps to build the premium Homepage for Vacation Nepal Tr
 - [x] **Task: Global Styles & Configuration** [c728790]
   - Configure Tailwind with the Himalayan Serenity Palette.
   - Set up global fonts (e.g., Inter or Outfit) and base typography.
-- [x] **Task: Implementation of Sticky Top Navigation**
+- [x] **Task: Implementation of Sticky Top Navigation** [bab924b]
   - Build the nav with logo, menu links, and WhatsApp contact button.
   - Implement stickiness and mobile menu toggle.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)**
 
 ---
 
