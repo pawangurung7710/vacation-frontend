@@ -37,6 +37,7 @@ We position ourselves as a premium yet accessible Himalayan trekking brand, offe
 1. **Homepage:** Already completed (premium marketing layout).
 2. **Nepal Treks Listing Page:** Main collection page with advanced filtering, sorting, trek cards grid, SEO content, and CTAs.
 3. **Trek Detail Page:** Full itinerary, altitude chart, trek map, cost breakdown, FAQ, and inquiry form.
+4. **Custom Trek Page:** Personalized itinerary landing page with interactive inquiry form and WhatsApp integration.
 
 ## Out of Scope (V1)
 - No payment gateway.

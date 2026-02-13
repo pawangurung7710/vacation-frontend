@@ -114,7 +114,7 @@ export default function Navbar() {
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
-                                    href={link.name}
+                                    href={link.href}
                                     onClick={() => setIsOpen(false)}
                                     className="block px-3 py-4 text-base font-medium text-primary-text hover:bg-background rounded-xl transition-colors"
                                 >

@@ -52,9 +52,12 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-sm">Company</h4>
                         <ul className="space-y-4 text-sm">
-                            {["About Us", "Our Guides", "Responsible Travel", "Booking Terms", "Contact Us"].map((link) => (
+                            {["About Us", "Our Guides", "Custom Treks", "Responsible Travel", "Booking Terms", "Contact Us"].map((link) => (
                                 <li key={link}>
-                                    <Link href="#" className="hover:text-cta-accent transition-colors flex items-center group">
+                                    <Link
+                                        href={link === "Custom Treks" ? "/custom-treks" : link === "Contact Us" ? "/contact" : "#"}
+                                        className="hover:text-cta-accent transition-colors flex items-center group"
+                                    >
                                         <span className="w-0 group-hover:w-4 overflow-hidden transition-all duration-300">→</span>
                                         <span>{link}</span>
                                     </Link>

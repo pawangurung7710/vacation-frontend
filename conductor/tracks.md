@@ -15,3 +15,7 @@ This file tracks all major tracks for the project.
 ## [x] Track: 103 - Individual Trek Detail Page
 *Focus: Implementing the high-conversion trek detail template as per 103-trek-detail-page.md.*
 *Link: [./conductor/archive/trek_detail_20260213/](./conductor/archive/trek_detail_20260213/)*
+
+## [x] Track: 104 - Custom Trek Page
+*Focus: Implementing the personalized itinerary landing page as per 104-custom-trek.md.*
+*Link: [./conductor/tracks/custom_trek_20260213/](./conductor/tracks/custom_trek_20260213/)*
