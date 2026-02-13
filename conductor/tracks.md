@@ -4,7 +4,7 @@ This file tracks all major tracks for the project.
 
 ---
 
-## [~] Track: 101 - Homepage Mockup
+## [x] Track: 101 - Homepage Mockup
 *Focus: Implementing the premium homepage layout as per 101-homepage.md.*
 *Link: [./conductor/tracks/homepage_20260213/](./conductor/tracks/homepage_20260213/)*
 
