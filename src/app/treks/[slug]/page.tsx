@@ -5,6 +5,8 @@ import TrekDetailHero from "@/components/TrekDetailHero";
 import StickyInquiryCard from "@/components/StickyInquiryCard";
 import TrekOverview from "@/components/TrekOverview";
 import TrekItinerary from "@/components/TrekItinerary";
+import TrekLogistics from "@/components/TrekLogistics";
+import TrekSeasonMap from "@/components/TrekSeasonMap";
 import { MessageCircle } from "lucide-react";
 
 interface PageProps {
@@ -38,6 +40,15 @@ export default async function TrekDetailPage({ params }: PageProps) {
                             highlights={trek.highlights || []}
                         />
                         <TrekItinerary itinerary={trek.itinerary || []} />
+                        <TrekLogistics
+                            includes={trek.includes || []}
+                            excludes={trek.excludes || []}
+                            difficulty={trek.difficulty}
+                        />
+                        <TrekSeasonMap
+                            bestSeasons={trek.bestSeasons.map(s => s.toString())}
+                            trekTitle={trek.title}
+                        />
                     </div>
 
                     {/* Sidebar / Sticky Card */}
