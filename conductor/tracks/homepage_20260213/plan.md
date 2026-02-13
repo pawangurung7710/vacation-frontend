@@ -20,12 +20,12 @@ This plan outlines the steps to build the premium Homepage for Vacation Nepal Tr
 ## Phase 2: Hero & Immediate Trust
 *Focus: High-impact entry point.*
 
-- [x] **Task: Immersive Hero Section**
+- [x] **Task: Immersive Hero Section** [97dfc95]
   - Implement full-width immersive image with overlay.
   - Build the centered search UI (Region & Month dropdowns).
-- [x] **Task: Trust Strip**
+- [x] **Task: Trust Strip** [97dfc95]
   - Build the 4-item horizontal trust bar (Ratings, Guides, Group Size, Eco-friendly).
-- [ ] **Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)**
 
 ---
 
