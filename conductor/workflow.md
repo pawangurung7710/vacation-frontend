@@ -25,3 +25,8 @@ Before marking a phase as complete:
 ## 4. Documentation
 - Update `tracks.md` and the track's `plan.md` as work progresses.
 - Keep the `conductor/` directory up-to-date with any architecture or tech stack changes.
+
+## 5. Track Archival
+Once a track is fully completed and all verification protocols have passed:
+1. Move the finished track directory from `conductor/tracks/<track_id>/` to `conductor/archive/<track_id>/`.
+2. Update the link in `conductor/tracks.md` to reflect the new location in the archive.
