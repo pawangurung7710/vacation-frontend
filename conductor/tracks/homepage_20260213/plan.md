@@ -32,15 +32,15 @@ This plan outlines the steps to build the premium Homepage for Vacation Nepal Tr
 ## Phase 3: Featured Content & Value Prop
 *Focus: Showcasing treks and brand value.*
 
-- [x] **Task: Featured Treks Grid**
+- [x] **Task: Featured Treks Grid** [f8e8e42]
   - Build the responsive 3-column trek card grid.
   - Cards should show: Title, Duration, Difficulty, Altitude, and Price.
-- [x] **Task: Value Proposition Section**
+- [x] **Task: Value Proposition Section** [f8e8e42]
   - Create the "Why Travel With Us" 4-block layout with custom icons.
-- [x] **Task: Seasonal Guide & Process**
+- [x] **Task: Seasonal Guide & Process** [f8e8e42]
   - Implement the "Best Time to Trek" timeline.
   - Build the "How It Works" 3-step process section.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)**
 
 ---
 
