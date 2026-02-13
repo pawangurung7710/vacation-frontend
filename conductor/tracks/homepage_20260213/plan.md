@@ -7,7 +7,7 @@ This plan outlines the steps to build the premium Homepage for Vacation Nepal Tr
 ## Phase 1: Core Layout & Navigation
 *Focus: Set up the global layout and the top nav.*
 
-- [ ] **Task: Global Styles & Configuration**
+- [x] **Task: Global Styles & Configuration**
   - Configure Tailwind with the Himalayan Serenity Palette.
   - Set up global fonts (e.g., Inter or Outfit) and base typography.
 - [ ] **Task: Implementation of Sticky Top Navigation**
