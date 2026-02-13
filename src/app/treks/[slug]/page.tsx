@@ -7,6 +7,9 @@ import TrekOverview from "@/components/TrekOverview";
 import TrekItinerary from "@/components/TrekItinerary";
 import TrekLogistics from "@/components/TrekLogistics";
 import TrekSeasonMap from "@/components/TrekSeasonMap";
+import TrekGalleryFAQ from "@/components/TrekGalleryFAQ";
+import TrekInquiryForm from "@/components/TrekInquiryForm";
+import RelatedTreks from "@/components/RelatedTreks";
 import { MessageCircle } from "lucide-react";
 
 interface PageProps {
@@ -49,6 +52,11 @@ export default async function TrekDetailPage({ params }: PageProps) {
                             bestSeasons={trek.bestSeasons.map(s => s.toString())}
                             trekTitle={trek.title}
                         />
+                        <TrekGalleryFAQ
+                            images={[trek.image, trek.image, trek.image, trek.image, trek.image]}
+                            trekTitle={trek.title}
+                        />
+                        <TrekInquiryForm trekTitle={trek.title} />
                     </div>
 
                     {/* Sidebar / Sticky Card */}
@@ -56,6 +64,8 @@ export default async function TrekDetailPage({ params }: PageProps) {
                         <StickyInquiryCard trek={trek} />
                     </div>
                 </div>
+
+                <RelatedTreks currentTrekId={trek.id} region={trek.region} />
             </div>
 
             {/* Mobile Sticky Footer CTA */}
