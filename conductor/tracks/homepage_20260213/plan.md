@@ -47,13 +47,13 @@ This plan outlines the steps to build the premium Homepage for Vacation Nepal Tr
 ## Phase 4: Engagement & Footer
 *Focus: Stories, deals, and persistent navigation.*
 
-- [x] **Task: Inspiration Carousel & Seasonal Deal Banner**
+- [x] **Task: Inspiration Carousel & Seasonal Deal Banner** [80a5869]
   - Build the stories carousel/grid.
   - Implement the "Special Autumn Season" promo banner.
-- [x] **Task: Email Signup & Professional Footer**
+- [x] **Task: Email Signup & Professional Footer** [80a5869]
   - Build the centered newsletter signup component.
   - Create the 4-column deep slate blue footer.
-- [x] **Task: Final Responsive Audit & Polish**
+- [x] **Task: Final Responsive Audit & Polish** [80a5869]
   - Fine-tune animations (hover lifts, smooth transitions).
   - Verify all sections follow the whitespace and typography rules.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)** [80a5869]
