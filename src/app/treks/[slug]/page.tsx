@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { treks } from "@/data/treks";
 import TrekDetailHero from "@/components/TrekDetailHero";
 import StickyInquiryCard from "@/components/StickyInquiryCard";
+import TrekOverview from "@/components/TrekOverview";
+import TrekItinerary from "@/components/TrekItinerary";
 import { MessageCircle } from "lucide-react";
 
 interface PageProps {
@@ -31,13 +33,11 @@ export default async function TrekDetailPage({ params }: PageProps) {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
                     {/* Main Content Area */}
                     <div className="flex-1 space-y-12">
-                        <section className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-border-subtle shadow-sm">
-                            <h2 className="text-2xl font-bold mb-4">Itinerary & Details coming soon</h2>
-                            <p className="text-primary-text/60 max-w-lg">
-                                We are currently building the full itinerary for {trek.title}.
-                                Phase 3 will implement the overview grid and interactive vertical timeline.
-                            </p>
-                        </section>
+                        <TrekOverview
+                            overview={trek.longDescription || trek.description}
+                            highlights={trek.highlights || []}
+                        />
+                        <TrekItinerary itinerary={trek.itinerary || []} />
                     </div>
 
                     {/* Sidebar / Sticky Card */}

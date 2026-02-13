@@ -2,11 +2,20 @@ export type Difficulty = "Easy" | "Moderate" | "Challenging" | "Strenuous";
 export type Region = "Everest" | "Annapurna" | "Manaslu" | "Langtang" | "Mustang" | "Dolpo";
 export type Season = "Spring" | "Autumn" | "Summer" | "Winter";
 
+export interface ItineraryDay {
+    day: number;
+    title: string;
+    altitude: string;
+    hours: string;
+    description: string;
+}
+
 export interface Trek {
     id: string;
     title: string;
     slug: string;
     description: string;
+    longDescription?: string;
     image: string;
     duration: number; // in days
     maxAltitude: number; // in meters
@@ -16,6 +25,10 @@ export interface Trek {
     price: number; // in USD
     isPopular?: boolean;
     isBestSeller?: boolean;
+    highlights?: string[];
+    itinerary?: ItineraryDay[];
+    includes?: string[];
+    excludes?: string[];
 }
 
 export const treks: Trek[] = [
@@ -24,6 +37,7 @@ export const treks: Trek[] = [
         title: "Everest Base Camp Trek",
         slug: "everest-base-camp",
         description: "The ultimate Himalayan adventure to the foot of the world's highest peak.",
+        longDescription: "The Everest Base Camp trek is more than just a trek – it's a pilgrimage to the core of the Himalayas. Rising to an altitude of 5,364m, this journey takes you through high-altitude landscapes, Sherpa villages, and ancient monasteries. Experience the unique culture of the Khumbu region while standing in the shadow of Mount Everest.",
         image: "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?q=80&w=1200",
         duration: 14,
         maxAltitude: 5364,
@@ -33,6 +47,37 @@ export const treks: Trek[] = [
         price: 1250,
         isPopular: true,
         isBestSeller: true,
+        highlights: [
+            "Stand at the foot of Mount Everest (8,848m)",
+            "Iconic flight from Kathmandu to Lukla",
+            "Explore the vibrant Sherpa capital, Namche Bazaar",
+            "Panoramic views from Kala Patthar (5,545m)",
+            "Spiritual visit to Tengboche Monastery"
+        ],
+        itinerary: [
+            { day: 1, title: "Arrival in Kathmandu", altitude: "1,400m", hours: "-", description: "Welcome to Nepal! We will pick you up from the airport and transfer you to your premium hotel." },
+            { day: 2, title: "Full day Kathmandu Exploration", altitude: "1,400m", hours: "4-5", description: "Visit UNESCO world heritage sites and prepare for the trek." },
+            { day: 3, title: "Fly to Lukla, Trek to Phakding", altitude: "2,610m", hours: "3-4", description: "Scenic flight followed by a gentle hike through the Dudh Koshi valley." },
+            { day: 4, title: "Trek to Namche Bazaar", altitude: "3,440m", hours: "5-6", description: "Cross high suspension bridges and climb to the 'Capital of the Sherpas'." },
+            { day: 5, title: "Acclimatization in Namche", altitude: "3,440m", hours: "3-4", description: "Hike to Everest View Hotel for your first clear look at the world's highest peak." },
+            { day: 6, title: "Trek to Tengboche", altitude: "3,860m", hours: "5-6", description: "A spiritual journey to the famous monastery with stunning Ama Dablam views." }
+        ],
+        includes: [
+            "All airport/hotel transfers",
+            "Premium hotel in Kathmandu (2 nights)",
+            "Standard teahouse accommodation during trek",
+            "All meals (Breakfast, Lunch, Dinner)",
+            "Professional local Sherpa guide",
+            "Lukla flight tickets & airport taxes",
+            "National Park permits and TIMS card"
+        ],
+        excludes: [
+            "Nepal entry visa fee",
+            "International flights",
+            "Personal trekking gear",
+            "Travel insurance (mandatory)",
+            "Tips for guide and porters"
+        ]
     },
     {
         id: "ac-12",
@@ -47,6 +92,12 @@ export const treks: Trek[] = [
         bestSeasons: ["Spring", "Autumn"],
         price: 1050,
         isPopular: true,
+        highlights: [
+            "Cross the Thorong La Pass (5,416m)",
+            "Visit the sacred Muktinath Temple",
+            "Experience diverse climates from subtropical to alpine",
+            "Views of Annapurna and Dhaulagiri ranges"
+        ]
     },
     {
         id: "mc-15",
@@ -60,6 +111,12 @@ export const treks: Trek[] = [
         region: "Manaslu",
         bestSeasons: ["Spring", "Autumn"],
         price: 1450,
+        highlights: [
+            "Stunning views of Mt. Manaslu (8,163m)",
+            "Cross the Larkya La Pass (5,106m)",
+            "Authentic Tibetan-Buddhist culture",
+            "Remote, restricted area experience"
+        ]
     },
     {
         id: "abc-10",
@@ -74,6 +131,12 @@ export const treks: Trek[] = [
         bestSeasons: ["Spring", "Autumn"],
         price: 950,
         isBestSeller: true,
+        highlights: [
+            "360-degree mountain views within the ABC sanctuary",
+            "Visit Machhapuchhre (Fishtail) Base Camp",
+            "Relax in natural hot springs at Jhinu Danda",
+            "Sunrise views from Poon Hill"
+        ]
     },
     {
         id: "lv-7",
@@ -87,6 +150,12 @@ export const treks: Trek[] = [
         region: "Langtang",
         bestSeasons: ["Spring", "Autumn"],
         price: 750,
+        highlights: [
+            "Traditional Tamang culture and villages",
+            "Stunning views of Langtang Lirung",
+            "Climb Tserko Ri (4,984m) for panoramic views",
+            "Lush rhododendron and bamboo forests"
+        ]
     },
     {
         id: "um-10",
@@ -100,6 +169,12 @@ export const treks: Trek[] = [
         region: "Mustang",
         bestSeasons: ["Spring", "Autumn", "Summer"],
         price: 1850,
+        highlights: [
+            "The medieval walled city of Lo Manthang",
+            "Mysterious ancient 'sky caves'",
+            "Arid, moon-like desert landscapes",
+            "Untouched Tibetan culture and monasteries"
+        ]
     },
     {
         id: "gl-15",
@@ -113,6 +188,12 @@ export const treks: Trek[] = [
         region: "Everest",
         bestSeasons: ["Spring", "Autumn"],
         price: 1350,
+        highlights: [
+            "Turquoise glacial lakes of Gokyo",
+            "Views of four 8,000m peaks from Gokyo Ri",
+            "Ngozumpa Glacier (Himalayas' longest)",
+            "Less-crowded alternative to EBC"
+        ]
     },
     {
         id: "dp-18",
@@ -126,5 +207,11 @@ export const treks: Trek[] = [
         region: "Dolpo",
         bestSeasons: ["Summer"],
         price: 2450,
+        highlights: [
+            "Crystal clear Phoksundo Lake",
+            "Centuries-old Bon and Buddhist monasteries",
+            "Cross two high passes (Kang La and Saldang La)",
+            "Truly isolated wilderness experience"
+        ]
     }
 ];
