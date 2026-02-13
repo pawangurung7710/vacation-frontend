@@ -18,4 +18,8 @@ This file tracks all major tracks for the project.
 
 ## [x] Track: 104 - Custom Trek Page
 *Focus: Implementing the personalized itinerary landing page as per 104-custom-trek.md.*
-*Link: [./conductor/tracks/custom_trek_20260213/](./conductor/tracks/custom_trek_20260213/)*
+*Link: [./conductor/archive/custom_trek_20260213/](./conductor/archive/custom_trek_20260213/)*
+
+## [x] Track: 105 - Special Offers Page
+*Focus: Showcase active trekking deals as per 105-special-offer.md.*
+*Link: [./conductor/tracks/special_offers_20260213/](./conductor/tracks/special_offers_20260213/)*
