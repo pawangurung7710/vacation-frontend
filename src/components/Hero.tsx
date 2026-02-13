@@ -14,7 +14,7 @@ export default function Hero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop"
+                    src="/images/hero-bg.jpg"
                     alt="Himalayan Mountain Range"
                     fill
                     priority

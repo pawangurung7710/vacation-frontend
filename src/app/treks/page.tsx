@@ -77,7 +77,7 @@ export default function TreksListingPage() {
             <ListingHero
                 title="Explore Treks in Nepal"
                 subtitle="Small-group Himalayan adventures led by trusted local guides."
-                image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000"
+                image="/images/seasonal-deal.jpg"
             />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

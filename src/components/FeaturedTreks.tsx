@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const treks = [
     {
         title: "Everest Base Camp Trek",
-        image: "https://images.unsplash.com/photo-1585016495481-91613a37932d?q=80&w=800&auto=format&fit=crop",
+        image: "/images/everest-base-camp.jpg",
         duration: "14 Days",
         difficulty: "Strenuous",
         altitude: "5,364m",
@@ -17,7 +17,7 @@ const treks = [
     },
     {
         title: "Annapurna Circuit Trek",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
+        image: "/images/annapurna-circuit.jpg",
         duration: "12 Days",
         difficulty: "Moderate",
         altitude: "5,416m",
@@ -26,7 +26,7 @@ const treks = [
     },
     {
         title: "Manaslu Circuit Trek",
-        image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=800&auto=format&fit=crop",
+        image: "/images/manaslu-circuit.jpg",
         duration: "15 Days",
         difficulty: "Challenging",
         altitude: "5,106m",

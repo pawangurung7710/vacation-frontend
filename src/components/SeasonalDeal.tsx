@@ -18,7 +18,7 @@ export default function SeasonalDeal() {
                     {/* Background Pattern/Overlay */}
                     <div className="absolute inset-0 z-0 opacity-20">
                         <Image
-                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop"
+                            src="/images/seasonal-deal.jpg"
                             alt="Mountain Pattern"
                             fill
                             className="object-cover"
