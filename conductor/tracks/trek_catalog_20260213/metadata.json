@@ -1,0 +1,8 @@
+{
+    "track_id": "trek_catalog_20260213",
+    "type": "feature",
+    "status": "new",
+    "created_at": "2026-02-13T10:57:30Z",
+    "updated_at": "2026-02-13T10:57:30Z",
+    "description": "Implement the core Trek Listing and Detail pages with filtering and inquiry forms."
+}
