@@ -13,6 +13,9 @@
   /* Typography */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-serif: "Outfit", Georgia, serif;
+
+  /* Animations */
+  --animate-spin-slow: spin 8s linear infinite;
 }
 
 :root {
@@ -28,7 +31,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: theme('colors.primary-text');
   font-family: var(--font-serif);
 }

@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
     { name: "Nepal Treks", href: "/treks" },
     { name: "Custom Treks", href: "/custom-treks" },
-    { name: "Why Travel With us", href: "/#why-us" },
+    { name: "About Us", href: "/about" },
     { name: "Seasonal Deals", href: "/deals" },
     { name: "Contact", href: "/contact" },
 ];

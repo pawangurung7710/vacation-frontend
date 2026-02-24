@@ -55,7 +55,7 @@ export default function Footer() {
                             {["About Us", "Our Guides", "Custom Treks", "Responsible Travel", "Booking Terms", "Contact Us"].map((link) => (
                                 <li key={link}>
                                     <Link
-                                        href={link === "Custom Treks" ? "/custom-treks" : link === "Contact Us" ? "/contact" : "#"}
+                                        href={link === "About Us" ? "/about" : link === "Custom Treks" ? "/custom-treks" : link === "Contact Us" ? "/contact" : "#"}
                                         className="hover:text-cta-accent transition-colors flex items-center group"
                                     >
                                         <span className="w-0 group-hover:w-4 overflow-hidden transition-all duration-300">→</span>

@@ -22,4 +22,12 @@ This file tracks all major tracks for the project.
 
 ## [x] Track: 105 - Special Offers Page
 *Focus: Showcase active trekking deals as per 105-special-offer.md.*
-*Link: [./conductor/tracks/special_offers_20260213/](./conductor/tracks/special_offers_20260213/)*
+*Link: [./conductor/archive/special_offers_20260213/](./conductor/archive/special_offers_20260213/)*
+
+## [x] Track: 106 - About Us Page
+*Focus: Establish trust and legitimacy as per 106-about-us.md.*
+*Link: [./conductor/archive/about_us_20260217/](./conductor/archive/about_us_20260217/)*
+
+## [x] Track: 107 - Contact Us Page
+*Focus: Provide multi-channel communication as per 107-contact-us.md.*
+*Link: [./conductor/archive/contact_us_20260217/](./conductor/archive/contact_us_20260217/)*
