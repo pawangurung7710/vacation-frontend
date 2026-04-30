@@ -1,0 +1,668 @@
+
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ git clone https://github.com/pawangurung7710/vacation-frontend.git
+Cloning into 'vacation-frontend'...
+remote: Enumerating objects: 445, done.
+remote: Counting objects: 100% (445/445), done.
+remote: Compressing objects: 100% (242/242), done.
+remote: Total 445 (delta 158), reused 444 (delta 157), pack-reused 0 (from 0)
+Receiving objects: 100% (445/445), 3.22 MiB | 363.00 KiB/s, done.
+Resolving deltas: 100% (158/158), done.
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ gcloud config set project vacation-nepal-frontend
+[environment: untagged] Read more g.co/cloud/project-env-tag.
+Updated property [core/project].
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ ls
+README-cloudshell.txt  vacation-frontend
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ gcloud services enable artifactregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com
+Operation "operations/acat.p2-903625666589-bdf3b80d-81ed-4ee9-bbb8-aaa66ee4f21f" finished successfully.
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ gcloud artifacts repositories create nextjs-repo \
+    --repository-format=docker \
+    --location=asia-south1 \
+    --description="Docker repository for Vacation Nepal"
+Create request issued for: [nextjs-repo]
+Waiting for operation [projects/vacation-nepal-frontend/locations/asia-south1/operations/065e79f3-54aa-4ec4-b795-4fb3e4775a77] to complete...done.                                        
+Created repository [nextjs-repo].
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ PROJECT_NUMBER=$(gcloud projects describe $(gcloud config get-value project) --format='value(projectNumber)')
+Your active configuration is: [cloudshell-13594]
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ gcloud projects add-iam-policy-binding $(gcloud config get-value project) \
+    --member="serviceAccount:${PROJECT_NUMBER}@cloudbuild.gserviceaccount.com" \
+    --role="roles/artifactregistry.writer"
+Your active configuration is: [cloudshell-13594]
+Updated IAM policy for project [vacation-nepal-frontend].
+bindings:
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-artifactregistry.iam.gserviceaccount.com
+  role: roles/artifactregistry.serviceAgent
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/artifactregistry.writer
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/cloudbuild.builds.builder
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-cloudbuild.iam.gserviceaccount.com
+  role: roles/cloudbuild.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@containerregistry.iam.gserviceaccount.com
+  role: roles/containerregistry.ServiceAgent
+- members:
+  - user:gurungpawan7710@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-pubsub.iam.gserviceaccount.com
+  role: roles/pubsub.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@serverless-robot-prod.iam.gserviceaccount.com
+  role: roles/run.serviceAgent
+etag: BwZO73eNAAs=
+version: 1
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~ (vacation-nepal-frontend)$ cd vacation-frontend/
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud builds submit --tag asia-south1-docker.pkg.dev/$(gcloud config get-value project)/nextjs-repo/nextjs-app
+Your active configuration is: [cloudshell-13594]
+Creating temporary archive of 150 file(s) totalling 3.6 MiB before compression.
+Some files were not included in the source upload.
+
+Check the gcloud log [/tmp/tmp.eLztZA1isw/logs/2026.04.08/09.25.00.303811.log] to see which files and the contents of the
+default gcloudignore file used (see `$ gcloud topic gcloudignore` to learn
+more).
+
+Uploading tarball of [.] to [gs://vacation-nepal-frontend_cloudbuild/source/1775640300.510543-5e485f0854824b149565c6a8ac900aae.tgz]
+ERROR: (gcloud.builds.submit) INVALID_ARGUMENT: could not resolve source: googleapi: Error 403: 903625666589-compute@developer.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist)., forbidden
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ ^C
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud projects add-iam-policy-binding vacation-nepal-frontend \
+    --member="serviceAccount:903625666589-compute@developer.gserviceaccount.com" \
+    --role="roles/storage.admin"
+Updated IAM policy for project [vacation-nepal-frontend].
+bindings:
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-artifactregistry.iam.gserviceaccount.com
+  role: roles/artifactregistry.serviceAgent
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/artifactregistry.writer
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/cloudbuild.builds.builder
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-cloudbuild.iam.gserviceaccount.com
+  role: roles/cloudbuild.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@containerregistry.iam.gserviceaccount.com
+  role: roles/containerregistry.ServiceAgent
+- members:
+  - user:gurungpawan7710@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-pubsub.iam.gserviceaccount.com
+  role: roles/pubsub.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@serverless-robot-prod.iam.gserviceaccount.com
+  role: roles/run.serviceAgent
+- members:
+  - serviceAccount:903625666589-compute@developer.gserviceaccount.com
+  role: roles/storage.admin
+etag: BwZO735FGDQ=
+version: 1
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud projects add-iam-policy-binding vacation-nepal-frontend \
+    --member="serviceAccount:903625666589@cloudbuild.gserviceaccount.com" \
+    --role="roles/storage.admin"
+Updated IAM policy for project [vacation-nepal-frontend].
+bindings:
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-artifactregistry.iam.gserviceaccount.com
+  role: roles/artifactregistry.serviceAgent
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/artifactregistry.writer
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/cloudbuild.builds.builder
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-cloudbuild.iam.gserviceaccount.com
+  role: roles/cloudbuild.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@containerregistry.iam.gserviceaccount.com
+  role: roles/containerregistry.ServiceAgent
+- members:
+  - user:gurungpawan7710@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-pubsub.iam.gserviceaccount.com
+  role: roles/pubsub.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@serverless-robot-prod.iam.gserviceaccount.com
+  role: roles/run.serviceAgent
+- members:
+  - serviceAccount:903625666589-compute@developer.gserviceaccount.com
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/storage.admin
+etag: BwZO739NOzM=
+version: 1
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud builds submit --tag asia-south1-docker.pkg.dev/$(gcloud config get-value project)/nextjs-repo/nextjs-app
+Your active configuration is: [cloudshell-13594]
+Creating temporary archive of 150 file(s) totalling 3.6 MiB before compression.
+Some files were not included in the source upload.
+
+Check the gcloud log [/tmp/tmp.eLztZA1isw/logs/2026.04.08/09.26.50.332240.log] to see which files and the contents of the
+default gcloudignore file used (see `$ gcloud topic gcloudignore` to learn
+more).
+
+Uploading tarball of [.] to [gs://vacation-nepal-frontend_cloudbuild/source/1775640410.524872-fc0ea73d1dd04a55b195e04b320ba214.tgz]
+Created [https://cloudbuild.googleapis.com/v1/projects/vacation-nepal-frontend/locations/global/builds/80e05b9b-053f-4a03-9032-21274a0dfba0].
+Logs are available at [ https://console.cloud.google.com/cloud-build/builds/80e05b9b-053f-4a03-9032-21274a0dfba0?project=903625666589 ].
+Waiting for build to complete. Polling interval: 1 second(s).
+----------------------------------------------------------------------------------- REMOTE BUILD OUTPUT -----------------------------------------------------------------------------------
+starting build "80e05b9b-053f-4a03-9032-21274a0dfba0"
+
+FETCHSOURCE
+Fetching storage object: gs://vacation-nepal-frontend_cloudbuild/source/1775640410.524872-fc0ea73d1dd04a55b195e04b320ba214.tgz#1775640415557949
+Copying gs://vacation-nepal-frontend_cloudbuild/source/1775640410.524872-fc0ea73d1dd04a55b195e04b320ba214.tgz#1775640415557949...
+/ [1 files][  3.2 MiB/  3.2 MiB]                                                
+Operation completed over 1 objects/3.2 MiB.
+BUILD
+Already have image (with digest): gcr.io/cloud-builders/gcb-internal
+Sending build context to Docker daemon  3.944MB
+Step 1/8 : FROM node:20-alpine
+20-alpine: Pulling from library/node
+589002ba0eae: Already exists
+d7f6aca05b78: Pulling fs layer
+62e0e1181d88: Pulling fs layer
+c7734204880f: Pulling fs layer
+c7734204880f: Download complete
+62e0e1181d88: Verifying Checksum
+62e0e1181d88: Download complete
+d7f6aca05b78: Verifying Checksum
+d7f6aca05b78: Download complete
+d7f6aca05b78: Pull complete
+62e0e1181d88: Pull complete
+c7734204880f: Pull complete
+Digest: sha256:f598378b5240225e6beab68fa9f356db1fb8efe55173e6d4d8153113bb8f333c
+Status: Downloaded newer image for node:20-alpine
+ ccfb9f0dc7ac
+Step 2/8 : WORKDIR /app
+ Running in daf7514e6c88
+Removing intermediate container daf7514e6c88
+ 519fb34e988b
+Step 3/8 : COPY package*.json ./
+ 6628ba179016
+Step 4/8 : RUN npm install
+ Running in 4dd27d0230f1
+
+added 372 packages, and audited 373 packages in 26s
+
+147 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (3 moderate, 3 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.12.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.12.1
+npm notice To update run: npm install -g npm@11.12.1
+npm notice
+Removing intermediate container 4dd27d0230f1
+ 636ecff9941a
+Step 5/8 : COPY . .
+ 3d50e8b6e55f
+Step 6/8 : RUN npm run build
+ Running in 9c252fa70412
+
+> temp-app@0.1.0 build
+> next build
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 15.0s
+  Running TypeScript ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/17) ...
+  Generating static pages using 1 worker (4/17) 
+  Generating static pages using 1 worker (8/17) 
+  Generating static pages using 1 worker (12/17) 
+✓ Generating static pages using 1 worker (17/17) in 1055.8ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /custom-treks
+├ ○ /deals
+├ ○ /treks
+└ ● /treks/[slug]
+  ├ /treks/everest-base-camp
+  ├ /treks/annapurna-circuit
+  ├ /treks/manaslu-circuit
+  └ [+5 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+Removing intermediate container 9c252fa70412
+ 89f677879eb1
+Step 7/8 : EXPOSE 3000
+ Running in 840f09e4fbf3
+Removing intermediate container 840f09e4fbf3
+ 192642fe404f
+Step 8/8 : CMD ["npm", "start"]
+ Running in 3d968254ade6
+Removing intermediate container 3d968254ade6
+ fea1df012a10
+Successfully built fea1df012a10
+Successfully tagged asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app:latest
+PUSH
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+989e799e6349: Preparing
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+8877225ebc3b: Preparing
+02fed8b42416: Preparing
+c44ec90e9017: Preparing
+61db63667fb7: Preparing
+a64e5647bfe6: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+^CCancelling...
+989e799e6349: Preparing
+Cancelled [https://cloudbuild.googleapis.com/v1/projects/vacation-nepal-frontend/locations/global/builds/80e05b9b-053f-4a03-9032-21274a0dfba0].
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INFO: The service account running this build projects/vacation-nepal-frontend/serviceAccounts/903625666589-compute@developer.gserviceaccount.com does not have permission to write logs to Cloud Logging. To fix this, grant the Logs Writer (roles/logging.logWriter) role to the service account.
+
+1 message(s) issued.
+
+BUILD FAILURE: Build step failure: user cancelation
+ERROR: (gcloud.builds.submit) build 80e05b9b-053f-4a03-9032-21274a0dfba0 completed with status "CANCELLED"
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ ^C
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud artifacts repositories add-iam-policy-binding nextjs-repo \
+    --location=asia-south1 \
+    --member="serviceAccount:903625666589@cloudbuild.gserviceaccount.com" \
+    --role="roles/artifactregistry.repoAdmin"
+Updated IAM policy for repository [nextjs-repo].
+bindings:
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/artifactregistry.repoAdmin
+etag: BwZO74-uNpI=
+version: 1
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud projects add-iam-policy-binding vacation-nepal-frontend \
+    --member="serviceAccount:service-903625666589@gcp-sa-cloudbuild.iam.gserviceaccount.com" \
+    --role="roles/artifactregistry.admin"
+Updated IAM policy for project [vacation-nepal-frontend].
+bindings:
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-cloudbuild.iam.gserviceaccount.com
+  role: roles/artifactregistry.admin
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-artifactregistry.iam.gserviceaccount.com
+  role: roles/artifactregistry.serviceAgent
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/artifactregistry.writer
+- members:
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/cloudbuild.builds.builder
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-cloudbuild.iam.gserviceaccount.com
+  role: roles/cloudbuild.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@containerregistry.iam.gserviceaccount.com
+  role: roles/containerregistry.ServiceAgent
+- members:
+  - user:gurungpawan7710@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:service-903625666589@gcp-sa-pubsub.iam.gserviceaccount.com
+  role: roles/pubsub.serviceAgent
+- members:
+  - serviceAccount:service-903625666589@serverless-robot-prod.iam.gserviceaccount.com
+  role: roles/run.serviceAgent
+- members:
+  - serviceAccount:903625666589-compute@developer.gserviceaccount.com
+  - serviceAccount:903625666589@cloudbuild.gserviceaccount.com
+  role: roles/storage.admin
+etag: BwZO75DVRpA=
+version: 1
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud artifacts repositories list --location=asia-south1
+Listing items under project vacation-nepal-frontend, location asia-south1.
+
+ARTIFACT_REGISTRY
+
+REPOSITORY: nextjs-repo
+FORMAT: DOCKER
+MODE: STANDARD_REPOSITORY
+DESCRIPTION: Docker repository for Vacation Nepal
+LOCATION: asia-south1
+LABELS: 
+ENCRYPTION: Google-managed key
+CREATE_TIME: 2026-04-08T09:23:48
+UPDATE_TIME: 2026-04-08T09:23:48
+SIZE (MB): 0
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ gcloud builds submit --tag asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+Creating temporary archive of 150 file(s) totalling 3.6 MiB before compression.
+Some files were not included in the source upload.
+
+Check the gcloud log [/tmp/tmp.eLztZA1isw/logs/2026.04.08/09.33.57.628339.log] to see which files and the contents of the
+default gcloudignore file used (see `$ gcloud topic gcloudignore` to learn
+more).
+
+Uploading tarball of [.] to [gs://vacation-nepal-frontend_cloudbuild/source/1775640837.842155-e88c60ee88d742bea2f949a1d92a085f.tgz]
+Created [https://cloudbuild.googleapis.com/v1/projects/vacation-nepal-frontend/locations/global/builds/f044c0ef-a54d-4df7-96e8-dd6318d7c085].
+Logs are available at [ https://console.cloud.google.com/cloud-build/builds/f044c0ef-a54d-4df7-96e8-dd6318d7c085?project=903625666589 ].
+Waiting for build to complete. Polling interval: 1 second(s).
+----------------------------------------------------------------------------------- REMOTE BUILD OUTPUT -----------------------------------------------------------------------------------
+starting build "f044c0ef-a54d-4df7-96e8-dd6318d7c085"
+
+FETCHSOURCE
+Fetching storage object: gs://vacation-nepal-frontend_cloudbuild/source/1775640837.842155-e88c60ee88d742bea2f949a1d92a085f.tgz#1775640842745096
+Copying gs://vacation-nepal-frontend_cloudbuild/source/1775640837.842155-e88c60ee88d742bea2f949a1d92a085f.tgz#1775640842745096...
+/ [1 files][  3.2 MiB/  3.2 MiB]                                                
+Operation completed over 1 objects/3.2 MiB.
+BUILD
+Already have image (with digest): gcr.io/cloud-builders/gcb-internal
+Sending build context to Docker daemon  3.944MB
+Step 1/8 : FROM node:20-alpine
+20-alpine: Pulling from library/node
+589002ba0eae: Already exists
+d7f6aca05b78: Pulling fs layer
+62e0e1181d88: Pulling fs layer
+c7734204880f: Pulling fs layer
+c7734204880f: Verifying Checksum
+c7734204880f: Download complete
+62e0e1181d88: Verifying Checksum
+62e0e1181d88: Download complete
+d7f6aca05b78: Verifying Checksum
+d7f6aca05b78: Download complete
+d7f6aca05b78: Pull complete
+62e0e1181d88: Pull complete
+c7734204880f: Pull complete
+Digest: sha256:f598378b5240225e6beab68fa9f356db1fb8efe55173e6d4d8153113bb8f333c
+Status: Downloaded newer image for node:20-alpine
+ ccfb9f0dc7ac
+Step 2/8 : WORKDIR /app
+ Running in e8fc1391ca6b
+Removing intermediate container e8fc1391ca6b
+ a978a97036c5
+Step 3/8 : COPY package*.json ./
+ 9262aa71eb13
+Step 4/8 : RUN npm install
+ Running in da79e3bd184a
+
+added 372 packages, and audited 373 packages in 15s
+
+147 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (3 moderate, 3 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.12.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.12.1
+npm notice To update run: npm install -g npm@11.12.1
+npm notice
+Removing intermediate container da79e3bd184a
+ a59101ad0a4a
+Step 5/8 : COPY . .
+ 21852e11ae5b
+Step 6/8 : RUN npm run build
+ Running in 3fdfcc0276ad
+
+> temp-app@0.1.0 build
+> next build
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.2s
+  Running TypeScript ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/17) ...
+  Generating static pages using 1 worker (4/17) 
+  Generating static pages using 1 worker (8/17) 
+  Generating static pages using 1 worker (12/17) 
+✓ Generating static pages using 1 worker (17/17) in 745.3ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /custom-treks
+├ ○ /deals
+├ ○ /treks
+└ ● /treks/[slug]
+  ├ /treks/everest-base-camp
+  ├ /treks/annapurna-circuit
+  ├ /treks/manaslu-circuit
+  └ [+5 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+Removing intermediate container 3fdfcc0276ad
+ 8d44b16ac9da
+Step 7/8 : EXPOSE 3000
+ Running in 48c94069da36
+Removing intermediate container 48c94069da36
+ d4e5e1e9a04f
+Step 8/8 : CMD ["npm", "start"]
+ Running in c155dbefe3ab
+Removing intermediate container c155dbefe3ab
+ 9f52b3ab9e76
+Successfully built 9f52b3ab9e76
+Successfully tagged asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app:latest
+PUSH
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+baae37018192: Preparing
+05454baee2fc: Preparing
+77eb66e71efa: Preparing
+803a88a13285: Preparing
+1020b9ec1792: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+baae37018192: Preparing
+05454baee2fc: Preparing
+77eb66e71efa: Preparing
+803a88a13285: Preparing
+1020b9ec1792: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+baae37018192: Preparing
+05454baee2fc: Preparing
+77eb66e71efa: Preparing
+803a88a13285: Preparing
+1020b9ec1792: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+baae37018192: Preparing
+05454baee2fc: Preparing
+77eb66e71efa: Preparing
+803a88a13285: Preparing
+1020b9ec1792: Preparing
+52caa5bd1d9d: Preparing
+5906df279b58: Preparing
+466f2827c5d1: Preparing
+989e799e6349: Preparing
+denied: Permission 'artifactregistry.repositories.uploadArtifacts' denied on resource (or it may not exist).
+Pushing asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app
+The push refers to repository [asia-south1-docker.pkg.dev/vacation-nepal-frontend/nextjs-repo/nextjs-app]
+baae37018192: Preparing
+05454baee2fc: Preparing
+77eb66e71efa: Preparing
+803a88a13285: Preparing
+1020b9ec1792: Preparing
+52caa5bd1d9d: Preparing
+^CCancelling...
+Cancelled [https://cloudbuild.googleapis.com/v1/projects/vacation-nepal-frontend/locations/global/builds/f044c0ef-a54d-4df7-96e8-dd6318d7c085].
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INFO: The service account running this build projects/vacation-nepal-frontend/serviceAccounts/903625666589-compute@developer.gserviceaccount.com does not have permission to write logs to Cloud Logging. To fix this, grant the Logs Writer (roles/logging.logWriter) role to the service account.
+
+1 message(s) issued.
+ERROR: (gcloud.builds.submit) build f044c0ef-a54d-4df7-96e8-dd6318d7c085 completed with status "CANCELLED"
+gurungpawan7710@cloudshell:~/vacation-frontend (vacation-nepal-frontend)$ 

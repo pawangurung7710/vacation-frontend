@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import ListingHero from "@/components/ListingHero";
 import TrekGrid from "@/components/TrekGrid";
 import TrekFilters from "@/components/TrekFilters";
 import MobileFilterDrawer from "@/components/MobileFilterDrawer";
 import ListingSEO from "@/components/ListingSEO";
 import { treks, Region, Difficulty } from "@/data/treks";
-import { SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal, Sparkles, Film } from "lucide-react";
 
 interface Filters {
     regions: Region[];
@@ -79,6 +80,55 @@ export default function TreksListingPage() {
                 subtitle="Small-group Himalayan adventures led by trusted local guides."
                 image="/images/seasonal-deal.jpg"
             />
+
+            {/* ── Design Mockup Quick Access ── */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-4">
+                <h2 className="text-lg font-bold text-primary-text mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-cta-accent" />
+                    Design Prototypes
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                    {/* Mockup V2 Card */}
+                    <Link href="/mockup-v2" className="group">
+                        <div className="relative overflow-hidden rounded-2xl border border-border-subtle bg-white shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#ff385c]/10 via-transparent to-[#ff385c]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="p-6 flex items-center gap-5 relative z-10">
+                                <div className="w-14 h-14 rounded-xl bg-[#ff385c]/10 flex items-center justify-center shrink-0 group-hover:bg-[#ff385c]/15 transition-colors">
+                                    <Sparkles className="w-7 h-7 text-[#ff385c]" />
+                                </div>
+                                <div>
+                                    <h3 className="text-base font-bold text-primary-text group-hover:text-[#ff385c] transition-colors">Airbnb-Style Landing Page</h3>
+                                    <p className="text-sm text-primary-text/60 mt-1">Mockup V2 — Carousel layout with animated sticky navbar</p>
+                                </div>
+                                <div className="ml-auto text-primary-text/30 group-hover:text-[#ff385c] group-hover:translate-x-1 transition-all">
+                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
+                    {/* Cinematic EBC Card */}
+                    <Link href="/treks/everest-base-camp-cinematic" className="group">
+                        <div className="relative overflow-hidden rounded-2xl border border-border-subtle bg-white shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#2C4A6A]/10 via-transparent to-[#006D77]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="p-6 flex items-center gap-5 relative z-10">
+                                <div className="w-14 h-14 rounded-xl bg-[#2C4A6A]/10 flex items-center justify-center shrink-0 group-hover:bg-[#2C4A6A]/15 transition-colors">
+                                    <Film className="w-7 h-7 text-[#2C4A6A]" />
+                                </div>
+                                <div>
+                                    <h3 className="text-base font-bold text-primary-text group-hover:text-[#2C4A6A] transition-colors">Cinematic Everest Base Camp</h3>
+                                    <p className="text-sm text-primary-text/60 mt-1">Immersive scroll-driven storytelling experience</p>
+                                </div>
+                                <div className="ml-auto text-primary-text/30 group-hover:text-[#2C4A6A] group-hover:translate-x-1 transition-all">
+                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
+                </div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 {/* Results Header */}

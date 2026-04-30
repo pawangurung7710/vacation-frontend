@@ -1,0 +1,330 @@
+{
+  "id": "ebc-001",
+  "name": "Premium Everest Base Camp Trek",
+  "slug": "everest-base-camp",
+  "description": "A 14-day premium trekking experience to Mount Everest Base Camp featuring trusted local guides, carefully paced acclimatization, and high-quality tea house accommodation.",
+  "longDescription": "The Everest Base Camp trek is more than just a trek – it's a pilgrimage to the core of the Himalayas. Rising to an altitude of 5,364m, this journey takes you through high-altitude landscapes, Sherpa villages, and ancient monasteries. Experience the unique culture of the Khumbu region while standing in the shadow of Mount Everest.",
+  "highlights": [
+    "Stand at the foot of Mount Everest (8,848m)",
+    "Iconic flight from Kathmandu to Lukla",
+    "Explore the vibrant Sherpa capital, Namche Bazaar",
+    "Panoramic views from Kala Patthar (5,545m)",
+    "Spiritual visit to Tengboche Monastery"
+  ],
+  "durationDays": 14,
+  "maxAltitudeMeters": 5364,
+  "difficulty": "Challenging",
+  "region": "Everest Region, Nepal",
+  "startPoint": "Lukla",
+  "endPoint": "Lukla",
+  "totalCostUSD": 1499,
+  "price": 1499,
+  "trustBadges": [
+    "10+ Years Safety Record",
+    "Certified Wilderness First Responder Guides",
+    "99% Success Rate"
+  ],
+  "heroImage": "/images/treks/ebc-hero.webp",
+  "images": [
+    "/images/treks/ebc-namche.webp",
+    "/images/treks/ebc-gorakshep.webp"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Fly from Kathmandu to Lukla and trek to Phakding",
+      "altitude": "2,651m (8,697ft)",
+      "altitudeMeters": 2651,
+      "distance": "8km",
+      "walkingHours": "3-4 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "The flight to Lukla is a thrilling start. The trail to Phakding is relatively flat, mostly following the Dudh Koshi river, making it a great day to ease into the altitude."
+    },
+    {
+      "day": 2,
+      "title": "Trek from Phakding to Namche Bazaar",
+      "altitude": "3,440m (11,286ft)",
+      "altitudeMeters": 3440,
+      "distance": "11km",
+      "walkingHours": "6-7 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "A challenging ascent into the Sagarmatha National Park. You will cross the famous Hillary Suspension Bridge and catch your first glimpse of Mount Everest."
+    },
+    {
+      "day": 3,
+      "title": "Acclimatization Day at Namche Bazaar",
+      "altitude": "3,440m (11,286ft)",
+      "altitudeMeters": 3440,
+      "distance": "4km (hike to Everest View Hotel)",
+      "walkingHours": "3-4 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "Climb high, sleep low. We hike up to the Everest View Hotel (3,880m) to jumpstart acclimatization before returning to Namche for the night."
+    },
+    {
+      "day": 4,
+      "title": "Trek from Namche Bazaar to Tengboche",
+      "altitude": "3,860m (12,664ft)",
+      "altitudeMeters": 3860,
+      "distance": "10km",
+      "walkingHours": "5-6 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "Trail passes beautiful rhododendron forests. Tengboche is home to the largest monastery in the Khumbu region, offering phenomenal views of Ama Dablam."
+    },
+    {
+      "day": 5,
+      "title": "Trek from Tengboche to Dingboche",
+      "altitude": "4,410m (14,468ft)",
+      "altitudeMeters": 4410,
+      "distance": "9km",
+      "walkingHours": "5-6 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "We cross the tree line today. The air becomes noticeably thinner as we follow the Imja Khola river up into the higher alpine zone."
+    },
+    {
+      "day": 6,
+      "title": "Acclimatization Day at Dingboche",
+      "altitude": "4,410m (14,468ft)",
+      "altitudeMeters": 4410,
+      "distance": "3km",
+      "walkingHours": "3-4 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "Crucial second acclimatization day. We hike up Nangkartshang Peak (~5,000m) for panoramic views of Makalu and Lhotse to condition the body."
+    },
+    {
+      "day": 7,
+      "title": "Trek from Dingboche to Lobuche",
+      "altitude": "4,910m (16,108ft)",
+      "altitudeMeters": 4910,
+      "distance": "8km",
+      "walkingHours": "5-6 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "We pass the Thukla Pass memorials (dedications to climbers who lost their lives on Everest). A somber and breathtakingly beautiful section."
+    },
+    {
+      "day": 8,
+      "title": "Trek to Everest Base Camp, sleep at Gorakshep",
+      "altitude": "5,364m (17,598ft)",
+      "altitudeMeters": 5364,
+      "distance": "13km",
+      "walkingHours": "7-8 hours",
+      "accommodation": "Basic Tea House (highest altitude)",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "The climax of the trek. We navigate the rocky Khumbu glacier moraine to reach EBC, celebrate the achievement, then descend to Gorakshep for sleep."
+    },
+    {
+      "day": 9,
+      "title": "Hike Kala Patthar, trek to Pheriche",
+      "altitude": "5,545m (18,192ft)",
+      "altitudeMeters": 5545,
+      "distance": "16km",
+      "walkingHours": "7-8 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "Early morning push up Kala Patthar for the absolute best, unobstructed sunrise view of Mount Everest. We then begin the rapid descent to thicker air."
+    },
+    {
+      "day": 10,
+      "title": "Trek from Pheriche to Namche Bazaar",
+      "altitude": "3,440m (11,286ft)",
+      "altitudeMeters": 3440,
+      "distance": "20km",
+      "walkingHours": "6-8 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "A long but heavily descending day. Breathing becomes dramatically easier. You can finally enjoy a hot shower and bakery treats in Namche."
+    },
+    {
+      "day": 11,
+      "title": "Trek from Namche Bazaar to Lukla",
+      "altitude": "2,860m (9,383ft)",
+      "altitudeMeters": 2860,
+      "distance": "19km",
+      "walkingHours": "6-7 hours",
+      "accommodation": "Premium Tea House",
+      "meals": ["Breakfast", "Lunch", "Dinner"],
+      "experienceNote": "The final trekking day. We re-cross the suspension bridges, exit the National Park, and celebrate our last night with the sherpa crew in Lukla."
+    },
+    {
+      "day": 12,
+      "title": "Fly from Lukla to Kathmandu",
+      "altitude": "1,400m (4,593ft)",
+      "altitudeMeters": 1400,
+      "distance": "N/A",
+      "walkingHours": "N/A",
+      "accommodation": "Hotel (Not included in trek cost)",
+      "meals": ["Breakfast"],
+      "experienceNote": "Early morning picturesque flight back to the capital. Delays due to weather are common, so we keep buffer days."
+    }
+  ],
+  "costBreakdown": {
+    "included": [
+      "Kathmandu-Lukla-Kathmandu domestic flights",
+      "Sagarmatha National Park entry permit",
+      "Khumbu Pasang Lhamu Rural Municipality entry permit",
+      "Experienced English-speaking government-licensed guide",
+      "Porter service (1 porter for 2 trekkers, max 15kg each)",
+      "Premium tea house accommodations during the trek",
+      "Three meals a day (Breakfast, Lunch, Dinner) on the trek",
+      "Comprehensive medical kit carried by the guide"
+    ],
+    "excluded": [
+      "Nepal entry visa fee",
+      "International airfare",
+      "Mandatory remote medical evacuation travel insurance",
+      "Hot showers, Wi-Fi, and battery charging at tea houses",
+      "Personal trekking equipment",
+      "Tips for guides and porters"
+    ],
+    "estimateBreakdown": [
+      {
+        "category": "Permits",
+        "description": "Sagarmatha National Park & Khumbu Local Municipality Entry Fees",
+        "amountUSD": 55
+      },
+      {
+        "category": "Flights",
+        "description": "Round trip Kathmandu to Lukla flights (foreigner rate)",
+        "amountUSD": 380
+      },
+      {
+        "category": "Guide & Porter",
+        "description": "Licensed Guide and Shared Porter for 12 days",
+        "amountUSD": 450
+      },
+      {
+        "category": "Food & Board",
+        "description": "Accommodation and 3 meals/day in tea houses",
+        "amountUSD": 450
+      },
+      {
+        "category": "Logistics & Company Service",
+        "description": "Tax, office service charge, emergency coordination setup",
+        "amountUSD": 164
+      }
+    ]
+  },
+  "weatherGuide": [
+    {
+      "month": "Jan-Feb",
+      "condition": "Clear but extremely cold. Heavy snow can block passes.",
+      "tempDay": "4°C to 12°C",
+      "tempNight": "-10°C to -15°C",
+      "suitability": "Possible"
+    },
+    {
+      "month": "Mar-May",
+      "condition": "Spring season. Excellent visibility. Blooming rhododendrons.",
+      "tempDay": "10°C to 16°C",
+      "tempNight": "-2°C to 5°C",
+      "suitability": "Best"
+    },
+    {
+      "month": "Jun-Aug",
+      "condition": "Monsoon summer. Muddy trails, leeches, obscured mountain views.",
+      "tempDay": "15°C to 20°C",
+      "tempNight": "5°C to 10°C",
+      "suitability": "Not Recommended"
+    },
+    {
+      "month": "Sep-Nov",
+      "condition": "Autumn season. Crystal clear skies, mild temperatures, highly stable.",
+      "tempDay": "12°C to 18°C",
+      "tempNight": "-5°C to 2°C",
+      "suitability": "Best"
+    },
+    {
+      "month": "Dec",
+      "condition": "Early winter. Clear views but severe night-time drops.",
+      "tempDay": "5°C to 12°C",
+      "tempNight": "-8°C to -12°C",
+      "suitability": "Possible"
+    }
+  ],
+  "packingList": {
+    "mustHave": [
+      "-20°C rated sleeping bag",
+      "Down jacket (Heavy)",
+      "Broken-in waterproof trekking boots",
+      "Water purification tablets or UV filter",
+      "Merino wool base layers",
+      "UVA/UVB specialized sunglasses"
+    ],
+    "optional": [
+      "Solar power bank",
+      "Kindle or paperback book",
+      "Trekking poles (highly recommended for descents)"
+    ],
+    "rentableInKathmandu": [
+      "-20°C sleeping bags ($1-$2 per day)",
+      "Down jackets ($1-$2 per day)",
+      "Trekking poles ($1 per day)"
+    ]
+  },
+  "helicopterEvacuation": {
+    "costRangeUSD": "$3,500 - $5,000 per flight",
+    "insuranceRequired": true,
+    "details": "Helicopter evacuation requires explicit authorization from your insurance provider or a cash deposit. We manage ground-to-air communication. Your insurance MUST cover 'High Altitude Trekking up to 6000m' and specifically include Helicopter Evacuation. Do not buy standard travel insurance."
+  },
+  "altitudeSicknessGuide": {
+    "symptoms": [
+      "Persistent headache not cured by painkillers",
+      "Loss of appetite and severe nausea",
+      "Dizziness or extreme fatigue",
+      "Difficulty sleeping"
+    ],
+    "prevention": [
+      "Drink 4-5 liters of water daily",
+      "Ascend slowly ('Bistari, Bistari')",
+      "Heed the 'Climb High, Sleep Low' rule on acclimatization days",
+      "Avoid alcohol and heavy meat consumption at high altitudes"
+    ],
+    "policy": "Our guides carry oximeters to check your oxygen saturation twice daily. If symptoms progress beyond a mild headache to AMS, the absolute protocol is immediate descent. Safety supersedes the itinerary."
+  },
+  "faqs": [
+    {
+      "question": "How hard is the Everest Base Camp Trek?",
+      "answer": "The Everest Base Camp trek is moderately difficult. It requires no technical climbing skills or mountaineering equipment, just walking. However, the high altitude makes cardiovascular exertion feel much harder. You should be able to comfortably hike 10km a day with a small backpack to succeed."
+    },
+    {
+      "question": "Do I need to train before trekking to Everest Base Camp?",
+      "answer": "Yes, cardiovascular training is essential. We recommend starting 8-12 weeks prior. Focus on stair climbing, running, or hiking 2-3 times a week with a weighted 5kg backpack to condition your leg muscles and lungs."
+    },
+    {
+      "question": "What happens if I get Altitude Sickness (AMS)?",
+      "answer": "If you experience mild symptoms (headache), our guides will have you rest and measure oxygen levels. If symptoms escalate to nausea, dizziness, or fluid in the lungs (HAPE), the strict protocol is immediate descent, often facilitated by a helicopter evacuation if walking is impossible."
+    },
+    {
+      "question": "Is drinking water safe along the Everest trail?",
+      "answer": "Tap and river water are not safe to drink raw. You must bring water purification tablets (Aquatabs), a UV purifier (Steripen), or a filter bottle (Lifestraw). Buying bottled plastic water is discouraged and banned in parts of the Khumbu region for environmental reasons."
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Sarah Jenkins",
+      "rating": 5,
+      "date": "2025-11-14",
+      "content": "An impeccably managed trek. Our guide Phurba ensured our pacing was perfect. I was terrified of altitude sickness, but their 'climb high, sleep low' enforcement kept me perfectly healthy all the way to EBC."
+    },
+    {
+      "author": "Marcus Thorne",
+      "rating": 5,
+      "date": "2025-04-20",
+      "content": "Transparency from the start. The cost breakdown was exactly as described, no hidden fees. Be sure to rent the -20 sleeping bag in Kathmandu like they suggest, Gorakshep is freezing."
+    }
+  ],
+  "expertGuides": [
+    {
+      "name": "Pasang Sherpa",
+      "experienceYears": 15,
+      "certifications": ["Wilderness First Responder", "Nepal Govt. Licensed Guide", "High Altitude Rescue Management"],
+      "bio": "Born in the Khumbu valley, Pasang has summited Everest twice and now leads premier trekking groups. He is an expert in dynamic acclimatization strategies."
+    }
+  ]
+}
